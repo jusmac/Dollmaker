@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>Gra</title>
+    <meta charset="UTF-8">
+    <link href="style.less" rel="stylesheet">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>        
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js'></script>
+    <script src='js/game.js'></script>
+    <script src='js/gameController.js'></script>
+    
+</head>
+
+<body ng-app="myGame" ng-controller="gameController">
+    <div id='preloader'>
+       
+    </div>
+    <div id='base'>
+        <img class='base-img' src= 'img/base.png'alt='base'/>
+    </div>
+    <div class='elements'>
+        <img class='eyes-img'  ng-repeat="myEyes in eyes" ng-src='{{myEyes.img}}' alt='eyes'/>   
+        <button  id='eyesClean' class= 'btn'>czyść</button>
+    </div>
+    <div class='elements'>
+        <img class='hair-img'  ng-repeat="myHair in hair" ng-src='{{myHair.img}}' alt='hair'/>   
+        <button  id='hairClean' class= 'btn'>czyść</button>
+    </div>
+    <div class='elements'>
+        <img class='wings-img' ng-repeat='myWings in wings' ng-src='{{myWings.img}}' alt='wings'/>  
+        <button  id='wingsClean' class= 'btn'>czyść</button>  
+    </div>
+    <div class='elements'>
+        <img class='top-img' ng-repeat='myTop in top' ng-src='{{myTop.img}}' alt='top'/>  
+        <button  id='topClean' class= 'btn'>czyść</button>  
+    </div>
+    <div class='elements'>
+        <img class='skirt-img' ng-repeat='mySkirt in skirt' ng-src='{{mySkirt.img}}' alt='skirt'/>  
+        <button  id='skirtClean' class= 'btn'>czyść</button>  
+    </div>
+    <div class='elements'>
+        <img class='shoes-img' ng-repeat='myShoes in shoes' ng-src='{{myShoes.img}}' alt='shoes'/>  
+        <button  id='shoesClean' class= 'btn'>czyść</button>  
+    </div>
+
+</body>
+
+</html>

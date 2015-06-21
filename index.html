@@ -15,36 +15,153 @@
 </head>
 
 <body ng-app="myGame" ng-controller="gameController">
-    <div id='preloader'>
-       
+    <div id='preloader'>   
     </div>
-    <div id='base'>
-        <img class='base-img' src= 'img/base.png'alt='base'/>
+    <div id='game-container'>
+        <div id='base'>
+            <img class='base-img' src= 'img/base.png' alt='base' />
+        </div>
+
+        <div class='elements'>
+            <button type="button" class="open btn btn-primary btn-sm" data-toggle="modal" data-target="#eyesModal">
+              <img src='img/icons/eyes.png' alt='eyesIcon'/>
+          </button>
+
+          <div class="modal fade" id="eyesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    
+                    <button  id='eyesClean' class= 'btn btn-success'>czyść</button>
+                    <button class="close btn-succes" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class='img-container' ng-repeat="myEyes in eyes">
+                        <img class='eyes-img img'  ng-src='{{myEyes.img}}' alt='eyes'/>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>  
+
+    
+</div>
+
+<div class='elements'>
+    <button type="button" class="open btn btn-primary btn-sm" data-toggle="modal" data-target="#hairModal">
+      <img src='img/icons/hair.png' alt='eyesIcon'/>
+  </button>
+
+  <div class="modal fade" id="hairModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="close btn-succes" data-dismiss="modal">&times;</button>
+            <button  id='hairClean' class= 'btn btn-success'>czyść</button>
+        </div>
+        <div class="modal-body">
+            <div class='img-container' ng-repeat="myHair in hair">
+                <img class='hair-img img' ng-src='{{myHair.img}}' alt='hair'/>
+            </div>
+        </div>
     </div>
-    <div class='elements'>
-        <img class='eyes-img'  ng-repeat="myEyes in eyes" ng-src='{{myEyes.img}}' alt='eyes'/>   
-        <button  id='eyesClean' class= 'btn'>czyść</button>
+</div>
+</div>  
+</div>
+
+<div class='elements'>
+    <button type="button" class="open btn btn-primary btn-sm" data-toggle="modal" data-target="#wingsModal">
+       <img src='img/icons/wings.png' alt='eyesIcon'/>
+  </button>
+
+  <div class="modal fade" id="wingsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="close btn-succes" data-dismiss="modal">&times;</button>
+            <button  id='wingsClean' class= 'btn btn-success'>czyść</button>  
+        </div>
+        <div class="modal-body">
+            <div class='img-container' ng-repeat="myWings in wings">
+                <img class='wings-img img' ng-src='{{myWings.img}}' alt='wings'/>  
+            </div>
+        </div>
     </div>
-    <div class='elements'>
-        <img class='hair-img'  ng-repeat="myHair in hair" ng-src='{{myHair.img}}' alt='hair'/>   
-        <button  id='hairClean' class= 'btn'>czyść</button>
+</div>
+</div>  
+</div>
+
+
+<div class='elements'>
+ <button type="button" class="open btn btn-primary btn-sm" data-toggle="modal" data-target="#topModal">
+  <img src='img/icons/top.png' alt='eyesIcon'/>
+</button>
+
+<div class="modal fade" id="topModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close btn-succes" data-dismiss="modal">&times;</button>
+        <button  id='topClean' class= 'btn btn-success'>czyść</button>  
     </div>
-    <div class='elements'>
-        <img class='wings-img' ng-repeat='myWings in wings' ng-src='{{myWings.img}}' alt='wings'/>  
-        <button  id='wingsClean' class= 'btn'>czyść</button>  
+    <div class="modal-body">
+        <div class='img-container' ng-repeat='myTop in top'>
+           <img class='top-img img'  ng-src='{{myTop.img}}' alt='top'/>  
+       </div>
+   </div>
+</div>
+</div>
+</div>  
+</div>
+
+<div class='elements'>
+    <button type="button" class="open btn btn-primary btn-sm" data-toggle="modal" data-target="#skirtModal">
+      <img src='img/icons/skirt.png' alt='eyesIcon'/>
+  </button>
+
+  <div class="modal fade" id="skirtModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="close btn-succes" data-dismiss="modal">&times;</button>
+            <button  id='skirtClean' class='btn btn-success'>czyść</button>  
+        </div>
+        <div class="modal-body">
+            <div class='img-container' ng-repeat='mySkirt in skirt'>
+                <img class='skirt-img img'  ng-src='{{mySkirt.img}}' alt='skirt'/>  
+            </div>
+        </div>
     </div>
-    <div class='elements'>
-        <img class='top-img' ng-repeat='myTop in top' ng-src='{{myTop.img}}' alt='top'/>  
-        <button  id='topClean' class= 'btn'>czyść</button>  
+</div>
+</div>  
+</div>
+
+<div class='elements'>
+ <button type="button" class="open btn btn-primary btn-sm" data-toggle="modal" data-target="#shoesModal">
+  <img src='img/icons/shoes.png' alt='eyesIcon'/>
+</button>
+
+<div class="modal fade" id="shoesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+       <button class="close btn-succes" data-dismiss="modal">&times;</button>
+        <button  id='shoesClean' class= 'btn btn-success'>czyść</button>  
     </div>
-    <div class='elements'>
-        <img class='skirt-img' ng-repeat='mySkirt in skirt' ng-src='{{mySkirt.img}}' alt='skirt'/>  
-        <button  id='skirtClean' class= 'btn'>czyść</button>  
+    <div class="modal-body">
+        <div class='img-container'ng-repeat='myShoes in shoes' >
+            <img class='shoes-img img'  ng-src='{{myShoes.img}}' alt='shoes'/>  
+        </div>
     </div>
-    <div class='elements'>
-        <img class='shoes-img' ng-repeat='myShoes in shoes' ng-src='{{myShoes.img}}' alt='shoes'/>  
-        <button  id='shoesClean' class= 'btn'>czyść</button>  
-    </div>
+</div>
+</div>
+</div>  
+</div>
+<div class='elements'><button id='cleanAll' class="btn btn-success">Wyczyść wszystko</button>
+</div>
+</div>
 
 </body>
 

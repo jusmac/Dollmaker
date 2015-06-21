@@ -1,9 +1,17 @@
 
 var game = angular.module('myGame', []);
 
+var elementsZoom = function(){
+	$('#elements').dblclick(function(){
+		$(this).children('.img').css({width: "400px;"});
+		alert('ok');
+	});
+};
+
 var eyesAdd = function(){
 	$('.eyes-img').click(function(){
-		$(this).clone().appendTo('#base').addClass('eyes-base-img');
+		$('.eyes-base-img').remove();
+		$(this).clone().appendTo('#base').removeClass('img').addClass('eyes-base-img');
 	});
 };
 
@@ -16,7 +24,8 @@ var eyesClean = function(){
 
 var hairAdd = function(){
 	$('.hair-img').click(function(){
-		$(this).clone().appendTo('#base').addClass('hair-base-img');
+		$('.hair-base-img').remove();
+		$(this).clone().appendTo('#base').removeClass('img').addClass('hair-base-img');
 	});
 };
 
@@ -28,7 +37,8 @@ var hairClean = function(){
 
 var wingsAdd = function(){
 	$('.wings-img').click(function(){
-		$(this).clone().appendTo('#base').addClass('wings-base-img');
+		$('.wings-base-img').remove();
+		$(this).clone().appendTo('#base').removeClass('img').addClass('wings-base-img');
 
 	});
 };
@@ -41,7 +51,8 @@ var wingsClean = function(){
 
 var skirtAdd = function(){
 	$('.skirt-img').click(function(){
-		$(this).clone().appendTo('#base').addClass('skirt-base-img');
+		$('.skirt-base-img').remove();
+		$(this).clone().appendTo('#base').removeClass('img').addClass('skirt-base-img');
 
 	});
 };
@@ -54,7 +65,8 @@ var skirtClean = function(){
 
 var topAdd = function(){
 	$('.top-img').click(function(){
-		$(this).clone().appendTo('#base').addClass('top-base-img');
+		$('.top-base-img').remove();
+		$(this).clone().appendTo('#base').removeClass('img').addClass('top-base-img');
 
 	});
 };
@@ -67,7 +79,8 @@ var topClean = function(){
 
 var shoesAdd = function(){
 	$('.shoes-img').click(function(){
-		$(this).clone().appendTo('#base').addClass('shoes-base-img');
+		$('.shoes-base-img').remove();
+		$(this).clone().appendTo('#base').removeClass('img').addClass('shoes-base-img');
 
 	});
 };
@@ -78,15 +91,26 @@ var shoesClean = function(){
 	});
 };
 
+var cleanAll = function(){
+	$('#cleanAll').click(function(){
+		$('.eyes-base-img').remove();
+		$('.hair-base-img').remove();
+		$('.wings-base-img').remove();
+		$('.skirt-base-img').remove();
+		$('.top-base-img').remove();
+		$('.shoes-base-img').remove();
+	});
+};
+
 var preLoader = function(){
 	$(window).load(function(){
-		$('#preloader-img').fadeOut();
-		$('#preloader').delay(200).fadeOut('slow');
-	})
+		$('#preloader').fadeOut('slow');
+	});
 };
 
 
 $(function() {
+	elementsZoom();
 	eyesAdd();
 	eyesClean();
 	hairAdd();
@@ -99,5 +123,6 @@ $(function() {
 	topClean();
 	shoesAdd();
 	shoesClean();
+	cleanAll();
 	preLoader();
 });

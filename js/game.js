@@ -1,17 +1,10 @@
 
 var game = angular.module('myGame', []);
 
-var elementsZoom = function(){
-	$('#elements').dblclick(function(){
-		$(this).children('.img').css({width: "400px;"});
-		alert('ok');
-	});
-};
-
 var eyesAdd = function(){
-	$('.eyes-img').click(function(){
+	$('.eyes-img').click(function(event){
 		$('.eyes-base-img').remove();
-		$(this).clone().appendTo('#base').removeClass('img').addClass('eyes-base-img');
+		$(event.target).clone().appendTo('#base').removeClass('img').addClass('eyes-base-img');
 	});
 };
 
@@ -110,7 +103,6 @@ var preLoader = function(){
 
 
 $(function() {
-	elementsZoom();
 	eyesAdd();
 	eyesClean();
 	hairAdd();

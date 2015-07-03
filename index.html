@@ -1,146 +1,150 @@
 <html>
 <head>
-    <title>Gra</title>
-    <meta charset="UTF-8">
-    <link href="style.less" rel="stylesheet">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>        
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js'></script>
-    <script src='js/game.js'></script>
-    <script src='js/gameController.js'></script>
-    
+  <title>Winx Doll Maker</title>
+  <meta charset="UTF-8">
+  <link href="style.less" rel="stylesheet">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>        
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js'></script>
+  <script src='js/game.js'></script>
+  <script src='js/gameController.js'></script>
+
 </head>
 
 <body ng-app="myGame" ng-controller="gameController">
-    <div id='preloader'>   
+  <div id='preloader'>   
+    <img class='winx-logo' src='img/Winx.png' alt='logo'>
+    <h1 class='preloader-h'>Doll Maker</h1>
+  </div>
+  <div id='game-container'>
+    <div id='base'>
+      <img class='base-img' src= 'img/base.png' alt='base' />
     </div>
-    <div id='game-container'>
-        <div id='base'>
-            <img class='base-img' src= 'img/base.png' alt='base' />
-        </div>
 
-        <div class='elements'>
-            <button type="button" class="open btn btn-primary btn-sm" data-toggle="modal" data-target="#eyesModal">
-              <img src='img/icons/eyes.png' alt='eyesIcon'/>
-          </button>
+    <div class='elements'>
+      <button type="button" class="open btn btn-primary btn-sm" data-toggle="modal" data-target="#eyesModal">
+        <img src='img/icons/eyes.png' alt='eyesIcon'/>
+      </button>
 
-          <div class="modal fade" id="eyesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    
-                    <button  id='eyesClean' class= 'btn btn-success'>czyść</button>
-                    <button class="close btn-succes" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <div class='img-container' ng-repeat="myEyes in eyes">
-                        <img class='eyes-img img'  ng-src='{{myEyes.img}}' alt='eyes'/>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                </div>
+      <div class="modal fade" id="eyesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+
+              <button  id='eyesClean' class= 'btn btn-success'>czyść</button>
+              <button class="close btn-succes" data-dismiss="modal">&times;</button>
             </div>
+            <div class="modal-body">
+              <div class='img-container' ng-repeat="myEyes in eyes">
+                <img class='eyes-img img'  ng-src='{{myEyes.img}}' alt='eyes'/>
+              </div>
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
         </div>
-    </div>  
+      </div>     
+    </div>
 
-    
-</div>
+    <div class='elements'>
+      <button type="button" class="open btn btn-primary btn-sm" data-toggle="modal" data-target="#hairModal">
+        <img src='img/icons/hair.png' alt='eyesIcon'/>
+      </button>
 
-<div class='elements'>
-    <button type="button" class="open btn btn-primary btn-sm" data-toggle="modal" data-target="#hairModal">
-      <img src='img/icons/hair.png' alt='eyesIcon'/>
-  </button>
-
-  <div class="modal fade" id="hairModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button class="close btn-succes" data-dismiss="modal">&times;</button>
-            <button  id='hairClean' class= 'btn btn-success'>czyść</button>
-        </div>
-        <div class="modal-body">
-            <div class='img-container' ng-repeat="myHair in hair">
+      <div class="modal fade" id="hairModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button class="close btn-succes" data-dismiss="modal">&times;</button>
+              <button  id='hairClean' class= 'btn btn-success'>czyść</button>
+            </div>
+            <div class="modal-body">
+              <div class='img-container' ng-repeat="myHair in hair">
                 <img class='hair-img img' ng-src='{{myHair.img}}' alt='hair'/>
+              </div>
+              <div class='empty'></div>
             </div>
+          </div>
         </div>
+      </div>  
     </div>
-</div>
-</div>  
-</div>
 
-<div class='elements'>
-    <button type="button" class="open btn btn-primary btn-sm" data-toggle="modal" data-target="#wingsModal">
-       <img src='img/icons/wings.png' alt='eyesIcon'/>
-  </button>
+    <div class='elements'>
+      <button type="button" class="open btn btn-primary btn-sm" data-toggle="modal" data-target="#wingsModal">
+       <img src='img/icons/wings.png' alt='wingsIcon'/>
+     </button>
 
-  <div class="modal fade" id="wingsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+     <div class="modal fade" id="wingsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <button class="close btn-succes" data-dismiss="modal">&times;</button>
             <button  id='wingsClean' class= 'btn btn-success'>czyść</button>  
+          </div>
+          <div class="modal-body">
+            <div class='img-container' ng-repeat="myWings in wings">
+              <img class='wings-img img' ng-src='{{myWings.img}}' alt='wings'/>  
+            </div>
+            <div class='empty'></div>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </div>
+
+
+  <div class='elements'>
+   <button type="button" class="open btn btn-primary btn-sm" data-toggle="modal" data-target="#topModal">
+    <img src='img/icons/top.png' alt='topIcon'/>
+  </button>
+
+  <div class="modal fade" id="topModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close btn-succes" data-dismiss="modal">&times;</button>
+          <button  id='topClean' class= 'btn btn-success'>czyść</button>  
         </div>
         <div class="modal-body">
-            <div class='img-container' ng-repeat="myWings in wings">
-                <img class='wings-img img' ng-src='{{myWings.img}}' alt='wings'/>  
-            </div>
-        </div>
-    </div>
-</div>
-</div>  
-</div>
-
-
-<div class='elements'>
- <button type="button" class="open btn btn-primary btn-sm" data-toggle="modal" data-target="#topModal">
-  <img src='img/icons/top.png' alt='eyesIcon'/>
-</button>
-
-<div class="modal fade" id="topModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button class="close btn-succes" data-dismiss="modal">&times;</button>
-        <button  id='topClean' class= 'btn btn-success'>czyść</button>  
-    </div>
-    <div class="modal-body">
-        <div class='img-container' ng-repeat='myTop in top'>
+          <div class='img-container' ng-repeat='myTop in top'>
            <img class='top-img img'  ng-src='{{myTop.img}}' alt='top'/>  
+         </div>
+         <div class='empty'></div>
        </div>
+     </div>
    </div>
-</div>
-</div>
-</div>  
+ </div>  
 </div>
 
 <div class='elements'>
-    <button type="button" class="open btn btn-primary btn-sm" data-toggle="modal" data-target="#skirtModal">
-      <img src='img/icons/skirt.png' alt='eyesIcon'/>
+  <button type="button" class="open btn btn-primary btn-sm" data-toggle="modal" data-target="#skirtModal">
+    <img src='img/icons/skirt.png' alt='skirtIcon'/>
   </button>
 
   <div class="modal fade" id="skirtModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button class="close btn-succes" data-dismiss="modal">&times;</button>
-            <button  id='skirtClean' class='btn btn-success'>czyść</button>  
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close btn-succes" data-dismiss="modal">&times;</button>
+          <button  id='skirtClean' class='btn btn-success'>czyść</button>  
         </div>
         <div class="modal-body">
-            <div class='img-container' ng-repeat='mySkirt in skirt'>
-                <img class='skirt-img img'  ng-src='{{mySkirt.img}}' alt='skirt'/>  
-            </div>
+          <div class='img-container' ng-repeat='mySkirt in skirt'>
+            <img class='skirt-img img'  ng-src='{{mySkirt.img}}' alt='skirt'/>  
+          </div>
+          <div class='empty'></div>
         </div>
+      </div>
     </div>
-</div>
-</div>  
+  </div>  
 </div>
 
 <div class='elements'>
  <button type="button" class="open btn btn-primary btn-sm" data-toggle="modal" data-target="#shoesModal">
-  <img src='img/icons/shoes.png' alt='eyesIcon'/>
+  <img src='img/icons/shoes.png' alt='shoesIcon'/>
 </button>
 
 <div class="modal fade" id="shoesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -148,14 +152,15 @@
     <div class="modal-content">
       <div class="modal-header">
        <button class="close btn-succes" data-dismiss="modal">&times;</button>
-        <button  id='shoesClean' class= 'btn btn-success'>czyść</button>  
+       <button  id='shoesClean' class= 'btn btn-success'>czyść</button>  
+     </div>
+     <div class="modal-body">
+      <div class='img-container'ng-repeat='myShoes in shoes' >
+        <img class='shoes-img img'  ng-src='{{myShoes.img}}' alt='shoes'/>  
+      </div>
+      <div class='empty'></div>
     </div>
-    <div class="modal-body">
-        <div class='img-container'ng-repeat='myShoes in shoes' >
-            <img class='shoes-img img'  ng-src='{{myShoes.img}}' alt='shoes'/>  
-        </div>
-    </div>
-</div>
+  </div>
 </div>
 </div>  
 </div>
@@ -163,6 +168,9 @@
 </div>
 </div>
 
+<footer>
+  <a href='http://justynamachalica.890m.com/'>Author: Justyna</a>
+</footer>
 </body>
 
 </html>

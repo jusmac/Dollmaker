@@ -34,6 +34,27 @@ game.controller('gameController', ['$scope', function($scope){
 		},
 		{
 			img: 'img/hair/hair6.png'
+		},
+		{
+			img: 'img/hair/hair7.png'
+		},
+		{
+			img: 'img/hair/hair8.png'
+		},
+		{
+			img: 'img/hair/hair9.png'
+		},
+		{
+			img: 'img/hair/hair10.png'
+		},
+		{
+			img: 'img/hair/hair11.png'
+		},
+		{
+			img: 'img/hair/hair12.png'
+		},
+		{
+			img: 'img/hair/hair13.png'
 		}
 	],
 	$scope.wings = [
@@ -80,6 +101,24 @@ game.controller('gameController', ['$scope', function($scope){
 		},
 		{
 			img: 'img/top/top6.png'
+		},
+		{
+			img: 'img/top/top7.png'
+		},
+		{
+			img: 'img/top/top8.png'
+		},
+		{
+			img: 'img/top/top9.png'
+		},
+		{
+			img: 'img/top/top10.png'
+		},
+		{
+			img: 'img/top/top11.png'
+		}, 
+		{
+			img: 'img/top/top12.png'
 		}
 	],
 	$scope.skirt = [
@@ -109,6 +148,24 @@ game.controller('gameController', ['$scope', function($scope){
 		},
 		{
 			img: 'img/skirt/skirt9.png'
+		},
+		{
+			img: 'img/skirt/skirt10.png'
+		},
+		{
+			img: 'img/skirt/skirt11.png'
+		},
+		{
+			img: 'img/skirt/skirt12.png'
+		},
+		{
+			img: 'img/skirt/skirt13.png'
+		},
+		{
+			img: 'img/skirt/skirt14.png'
+		},
+		{
+			img: 'img/skirt/skirt15.png'
 		}
 	],
 	$scope.shoes = [
@@ -130,6 +187,21 @@ game.controller('gameController', ['$scope', function($scope){
 		{
 			img: 'img/shoes/shoes6.png'
 		},
+		{
+			img: 'img/shoes/shoes7.png'
+		},
+		{
+			img: 'img/shoes/shoes8.png'
+		},
+		{
+			img: 'img/shoes/shoes9.png'
+		},
+		{
+			img: 'img/shoes/shoes10.png'
+		},
+		{
+			img: 'img/shoes/shoes11.png'
+		}
 	],
 	$scope.girl = [
 		{

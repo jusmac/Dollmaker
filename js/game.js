@@ -1,6 +1,3 @@
-
-var game = angular.module('myGame', []);
-
 var eyesAdd = function(){
 	$('.eyes-img').click(function(event){
 		$('.eyes-base-img').remove();
